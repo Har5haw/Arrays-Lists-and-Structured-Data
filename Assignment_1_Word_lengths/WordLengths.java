@@ -1,8 +1,6 @@
 package Assignment_1_Word_lengths;
 
 import edu.duke.FileResource;
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class WordLengths {
@@ -18,7 +16,7 @@ public class WordLengths {
         }
     }
 
-    public int indexOfMax(int[] arr){
+    public static int indexOfMax(int[] arr){
         int maxValue = 0;
         int indexOfMax = 0;
         for(int i=0;i<arr.length;i++){

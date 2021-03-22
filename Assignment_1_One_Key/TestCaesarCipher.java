@@ -1,14 +1,11 @@
-package KnownLanguageAndKnownKeyLength;
+package Assignment_1_One_Key;
+
+import Assignment_1_Word_lengths.WordLengths;
+import edu.duke.FileResource;
 
 import java.util.Arrays;
 
-public class CaesarCrack {
-    char commonChar;
-
-    public CaesarCrack(char commonChar){
-        this.commonChar = commonChar;
-    }
-
+public class TestCaesarCipher {
     public int[] countLetters(String s){
         String alphabets = "abcdefghijklmnopqrstuvwxyz";
         int countArray[] = new int[27];
@@ -34,16 +31,28 @@ public class CaesarCrack {
         return indexOfMax;
     }
 
-    public int getKey(String input){
+    public void simpleTests(){
+        FileResource fileResource = new FileResource();
+        CaesarCipher caesarCipher = new CaesarCipher(18);
+        String encrypted = caesarCipher.encrypt(fileResource.asString());
+        System.out.println("encrypted string : "+encrypted);
+        String decrypt = caesarCipher.decrypt(encrypted);
+        System.out.println("decrypted string with key : "+decrypt);
+        decrypt = breakCaesarCipher(encrypted);
+        System.out.println("decrypted string without key : "+decrypt);
+    }
 
+    public String breakCaesarCipher(String input){
         int countArray[] = countLetters(input);
         int indexOfHighFrequent = indexOfMax(countArray);
         String alphabets = "abcdefghijklmnopqrstuvwxyz";
         char mostRepeatedChar = alphabets.charAt(indexOfHighFrequent);
-        int diffMostRepeated = mostRepeatedChar - commonChar;
+        int diffMostRepeated = (int)mostRepeatedChar - (int)'e';
         if(diffMostRepeated < 0){
             diffMostRepeated = 26 + diffMostRepeated;
         }
-        return diffMostRepeated;
+        int key = diffMostRepeated;
+        CaesarCipher caesarCipher = new CaesarCipher(key);
+        return caesarCipher.decrypt(input);
     }
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import edu.duke.*;
 public class CaesarCipher {
 
-    public String encrypt(String input, int key) {
+    public static String encrypt(String input, int key) {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String encryptShiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
         StringBuilder sb = new StringBuilder(input);
@@ -25,7 +25,7 @@ public class CaesarCipher {
         return sb.toString();
     }
 
-    public String encryptTwoKeys(String input, int key1, int key2){
+    public static String encryptTwoKeys(String input, int key1, int key2){
 
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
         String encryptShiftedAlphabet = alphabet.substring(key1) + alphabet.substring(0, key1);
