@@ -8,14 +8,14 @@ package UnKnownLanguageAndUnknownKeyLength;
  */
 import java.lang.*;
 public class CaesarCipher {
+    private int key;
     private String alphabet;
     private String encryptShiftedAlphabet;
-    private String decryptShiftedAlphabet;
 
     public CaesarCipher(int key) {
         alphabet = "abcdefghijklmnopqrstuvwxyz";
+        this.key = key;
         encryptShiftedAlphabet = alphabet.substring(key) + alphabet.substring(0, key);
-        decryptShiftedAlphabet = alphabet.substring(26 - key) + alphabet.substring(0, 26 - key);
     }
 
     public String encrypt(String input) {
@@ -36,19 +36,7 @@ public class CaesarCipher {
     }
 
     public String decrypt(String input) {
-        StringBuilder sb = new StringBuilder(input);
-        for (int i = 0; i < sb.length(); i++) {
-            char originalCh = sb.charAt(i);
-            int idx = alphabet.indexOf(Character.toLowerCase(originalCh));
-            if (idx != -1) {
-                char decryptedCh = decryptShiftedAlphabet.charAt(idx);
-                if (Character.isUpperCase(originalCh)) {
-                    sb.setCharAt(i, Character.toUpperCase(decryptedCh));
-                } else {
-                    sb.setCharAt(i, decryptedCh);
-                }
-            }
-        }
-        return sb.toString();
+        KnownLanguageAndKnownKeyLength.CaesarCipher caesarCipher = new KnownLanguageAndKnownKeyLength.CaesarCipher(26 - key);
+        return caesarCipher.encrypt(input);
     }
 }

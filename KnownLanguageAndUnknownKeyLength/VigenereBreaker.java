@@ -1,6 +1,5 @@
 package KnownLanguageAndUnknownKeyLength;
 
-
 import edu.duke.*;
 import java.util.*;
 public class VigenereBreaker {

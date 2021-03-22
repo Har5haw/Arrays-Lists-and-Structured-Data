@@ -1,8 +1,6 @@
 package KnownLanguageAndKnownKeyLength;
 
-
 import edu.duke.*;
-import java.util.*;
 public class VigenereBreaker {
     public String sliceString(String input, int whichSlice, int totalSlices) {
         StringBuilder sb = new StringBuilder(input);

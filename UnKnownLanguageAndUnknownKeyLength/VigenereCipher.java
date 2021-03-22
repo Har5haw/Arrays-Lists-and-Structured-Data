@@ -1,11 +1,5 @@
 package UnKnownLanguageAndUnknownKeyLength;
 
-/**
- * Write a description of class VigenereCipher here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class VigenereCipher {
     int[] key;
     CaesarCipher[] ccList;

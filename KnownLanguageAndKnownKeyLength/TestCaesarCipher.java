@@ -1,12 +1,6 @@
 package KnownLanguageAndKnownKeyLength;
 
 
-/**
- * Write a description of class TestCaesarCipher here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 import java.util.*;
 import edu.duke.*;
 public class TestCaesarCipher {

@@ -1,12 +1,5 @@
 package KnownLanguageAndKnownKeyLength;
 
-
-/**
- * Write a description of class CaesarCrack here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class CaesarCrack
 {
     char commonChar;
